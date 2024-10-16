@@ -88,10 +88,11 @@ Os arquivos de saída são salvos no diretório especificado por `FILE_OUTPUT`.
 
 ## Exemplo em Vídeo
 
-[![Assista ao Vídeo](https://img.youtube.com/vi/-e--PE_sNUE/0.jpg)](https://youtube.com/shorts/pyeYdNVvqdg)
+[![Assista ao Vídeo](https://via.placeholder.com/560x315.png?text=Clique+para+assistir+ao+vídeo)](https://youtube.com/shorts/pyeYdNVvqdg)
+
+> **Dica**: Segure `Ctrl` (Windows/Linux) ou `Cmd` (Mac) enquanto clica no link para abrir o vídeo em uma nova aba.
 
 Clique na imagem acima para assistir ao vídeo.
-
 
 ## Contato
 
