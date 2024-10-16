@@ -1,3 +1,5 @@
+# usando interface Tkinter para selecionar os arquivos
+
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import os
