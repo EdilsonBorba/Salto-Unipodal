@@ -88,7 +88,7 @@ Os arquivos de saída são salvos no diretório especificado por `FILE_OUTPUT`.
 
 ## Exemplo em Vídeo
 
-[![Assista ao Vídeo](https://img.youtube.com/vi/-e--PE_sNUE/0.jpg)](https://youtube.com/shorts/-e--PE_sNUE?feature=share)
+[![Assista ao Vídeo](https://img.youtube.com/vi/-e--PE_sNUE/0.jpg)](https://youtube.com/shorts/pyeYdNVvqdg)
 
 Clique na imagem acima para assistir ao vídeo.
 
