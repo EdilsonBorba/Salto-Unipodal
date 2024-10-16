@@ -23,6 +23,8 @@ Isso instalará as seguintes bibliotecas:
 
 ## Arquivos de Entrada
 
+Os arquivos .py realizam a mesma análise; porém, um deles utiliza o Tkinter para gerar um popup de seleção das entradas, enquanto o unipodal permite a edição diretamente no código.
+
 Os arquivos de entrada incluem:
 
 - **Arquivo de Ângulos (.mot)**: Contém os dados de ângulos articulares (ex.: quadril, joelho, tornozelo).
