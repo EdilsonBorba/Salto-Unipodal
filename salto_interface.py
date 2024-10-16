@@ -119,11 +119,81 @@ def run_analysis():
 
         # Cálculo das métricas
         tempo_aereo = (momento_retorno_solo - momento_despregue) * dt_kinematic
+        altura_pelvis_pre = pelvis_ty[momento_despregue]
+        altura_pelvis_pos = pelvis_ty[momento_retorno_solo]
+        altura_max_pelvis = np.max(pelvis_ty[momento_despregue:momento_retorno_solo])
+        diff_altura_max_pelvis = altura_max_pelvis - min(altura_pelvis_pre, altura_pelvis_pos)
         dist_inicial = toe_x[momento_despregue]
         dist_final = toe_x[momento_retorno_solo]
         distance = dist_final - dist_inicial
 
-        # Mostrando as métricas em um popup
+        # Métricas Pré e Pós salto
+        start_pre = max(momento_despregue - int(1 / dt_kinematic), 0)
+        end_pre = momento_despregue
+
+        hip_pre_max = np.max(hip_flexion[start_pre:end_pre])
+        hip_pre_min = np.min(hip_flexion[start_pre:end_pre])
+        hip_pre_amplitude = hip_pre_max - hip_pre_min
+
+        start_pos = momento_retorno_solo
+        end_pos = min(momento_retorno_solo + int(3 / dt_kinematic), len(hip_flexion))
+
+        hip_pos_max = np.max(hip_flexion[start_pos:end_pos])
+        hip_pos_min = np.min(hip_flexion[start_pos:end_pos])
+        hip_pos_amplitude = hip_pos_max - hip_pos_min
+
+        # Cálculo das métricas do joelho e tornozelo
+        knee_pre_max = np.max(knee_flexion[start_pre:end_pre])
+        knee_pre_min = np.min(knee_flexion[start_pre:end_pre])
+        knee_pre_amplitude = knee_pre_max - knee_pre_min
+
+        ankle_pre_max = np.max(ankle_flexion[start_pre:end_pre])
+        ankle_pre_min = np.min(ankle_flexion[start_pre:end_pre])
+        ankle_pre_amplitude = ankle_pre_max - ankle_pre_min
+
+        knee_pos_max = np.max(knee_flexion[start_pos:end_pos])
+        knee_pos_min = np.min(knee_flexion[start_pos:end_pos])
+        knee_pos_amplitude = knee_pos_max - knee_pos_min
+
+        ankle_pos_max = np.max(ankle_flexion[start_pos:end_pos])
+        ankle_pos_min = np.min(ankle_flexion[start_pos:end_pos])
+        ankle_pos_amplitude = ankle_pos_max - ankle_pos_min
+
+        # Criar DataFrame com os dados conforme o modelo
+        df_export_data = pd.DataFrame({
+            'Nome': [NAME],
+            'Perna': [LEG],
+            'Tentativa': [TRIAL],
+            'Distância (m)': [distance],
+            'Tempo Aéreo (s)': [tempo_aereo],
+            'Diferença máxima altura pélvica (m)': [diff_altura_max_pelvis],
+            'Aterrissagem': [parte_aterrissagem],
+            'Joelho Flexão Máxima Pré (°)': [knee_pre_max],
+            'Joelho Flexão Mínima Pré (°)': [knee_pre_min],
+            'Joelho Amplitude Pré (°)': [knee_pre_amplitude],
+            'Quadril Flexão Máxima Pré (°)': [hip_pre_max],
+            'Quadril Extensão Máxima Pré (°)': [hip_pre_min],
+            'Quadril Amplitude Pré (°)': [hip_pre_amplitude],
+            'Tornozelo Dorsiflexão Pré (°)': [ankle_pre_max],
+            'Tornozelo Plantiflexão Pré (°)': [ankle_pre_min],
+            'Tornozelo Amplitude Pré (°)': [ankle_pre_amplitude],
+            'Joelho Flexão Máxima Pós (°)': [knee_pos_max],
+            'Joelho Flexão Mínima Pós (°)': [knee_pos_min],
+            'Joelho Amplitude Pós (°)': [knee_pos_amplitude],
+            'Quadril Flexão Máxima Pós (°)': [hip_pos_max],
+            'Quadril Extensão Máxima Pós (°)': [hip_pos_min],
+            'Quadril Amplitude Pós (°)': [hip_pos_amplitude],
+            'Tornozelo Dorsiflexão Máxima Pós (°)': [ankle_pos_max],
+            'Tornozelo Plantiflexão Máxima Pós (°)': [ankle_pos_min],
+            'Tornozelo Amplitude Pós (°)': [ankle_pos_amplitude],
+        })
+
+        # Salvar os dados no Excel
+        excel_filename = os.path.join(FILE_OUTPUT, f"{NAME}_{LEG}_Teste{TRIAL}_Resultados.xlsx")
+        df_export_data.to_excel(excel_filename, index=False)
+        print(f"Resultados salvos em {excel_filename}")
+
+        # Mostrar popup com os resultados principais
         messagebox.showinfo("Resultados do Teste", f"Distância do Salto: {distance:.2f} m\n"
                                                    f"Pé de Aterrissagem: {parte_aterrissagem}\n"
                                                    f"Tempo de Voo: {tempo_aereo:.2f} s")
@@ -153,6 +223,10 @@ def run_analysis():
         plt.legend()
         plt.grid(True)
 
+        # Salvar o gráfico
+        image_filename = os.path.join(FILE_OUTPUT, f"{NAME}_{LEG}_Teste{TRIAL}_Grafico.png")
+        plt.savefig(image_filename, dpi=1200)
+        print(f"Gráfico salvo em {image_filename} com 1200 dpi")
         plt.show()
 
     except Exception as e:
