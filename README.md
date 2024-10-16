@@ -61,6 +61,8 @@ No script, configure as constantes de entrada para refletir o nome do paciente, 
 - `FILE_PATH_ANGLES`, `FILE_NAME_ANGLES`: Caminho e nome do arquivo `.mot`.
 - `FILE_PATH_MARKER`, `FILE_NAME_MARKER`: Caminho e nome do arquivo `.trc`.
 
+- Eventualmente os dados podem estar em colunas diferentes. Verificar
+
 ### Executar o Script
 
 Uma vez configuradas as entradas, você pode executar o script com o comando:
