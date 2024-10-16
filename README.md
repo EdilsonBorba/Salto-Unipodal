@@ -86,9 +86,11 @@ Os arquivos de saída são salvos no diretório especificado por `FILE_OUTPUT`.
 - **Arquivo Excel**: `Borba_Direita_Teste1_Resultados.xlsx`
 - **Gráfico**: `Borba_Direita_Teste1_Grafico.png`
 
-- ## Exemplo em Vídeo
+## Exemplo em Vídeo
 
-<iframe width="560" height="315" src="https://youtube.com/shorts/-e--PE_sNUE?feature=share" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Assista ao Vídeo](https://img.youtube.com/vi/-e--PE_sNUE/0.jpg)](https://youtube.com/shorts/-e--PE_sNUE?feature=share)
+
+Clique na imagem acima para assistir ao vídeo.
 
 
 ## Contato
