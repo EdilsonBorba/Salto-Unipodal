@@ -30,6 +30,8 @@ Os arquivos de entrada incluem:
 - **Arquivo de Ângulos (.mot)**: Contém os dados de ângulos articulares (ex.: quadril, joelho, tornozelo).
 - **Arquivo de Marcadores (.trc)**: Contém os dados de posições dos marcadores (ex.: ponta do pé, calcanhar).
 
+- **Esse script usa o index das colunas como referêrencia. Verificar se os dados angulares e de posição estão na coluna indicada no código
+
 ### Fonte dos Arquivos
 
 Esses arquivos devem ser baixados da plataforma **OpenCap**. Você pode acessar a plataforma aqui: [OpenCap](https://opencap.ai).
@@ -60,8 +62,6 @@ No script, configure as constantes de entrada para refletir o nome do paciente, 
 - `FILE_OUTPUT`: Caminho onde os arquivos de saída serão salvos.
 - `FILE_PATH_ANGLES`, `FILE_NAME_ANGLES`: Caminho e nome do arquivo `.mot`.
 - `FILE_PATH_MARKER`, `FILE_NAME_MARKER`: Caminho e nome do arquivo `.trc`.
-
-- Eventualmente os dados podem estar em colunas diferentes. Verificar
 
 ### Executar o Script
 
