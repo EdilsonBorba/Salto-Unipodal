@@ -1,0 +1,9 @@
+cff-version: 1.1.0
+If you use this software, please cite it as below.
+authors:
+- family-names: Borba
+  given-names: Edilson Fernando de
+orcid: https://orcid.org/0000-0002-9399-1098
+title: EdilsonBorba/Salto-Unipodal: v1.0.0
+version: v1.0.0
+date-released: 2024-11-08
