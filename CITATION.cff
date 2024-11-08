@@ -1,9 +1,11 @@
-cff-version: 1.1.0
-If you use this software, please cite it as below.
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
 authors:
-- family-names: Borba
-  given-names: Edilson Fernando de
-orcid: https://orcid.org/0000-0002-9399-1098
-title: EdilsonBorba/Salto-Unipodal: v1.0.0
-version: v1.0.0
-date-released: 2024-11-08
+- family-names: "Borba"
+  given-names: "Edilson Fernando de"
+  orcid: "https://orcid.org/0000-0002-9399-1098"
+title: "Salto unipodal"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2017-12-18
+url: "https://github.com/EdilsonBorba/Salto-Unipodal/tree/v1.0.0"
